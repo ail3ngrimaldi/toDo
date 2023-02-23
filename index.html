@@ -76,9 +76,19 @@
         </ul>
     </div>
     <!--FORM-->
-    <section class="form-container" id="form">
+    <section class="form-container" id="form-container">
             <h2>Añade una tarea</h2>
             <form action="#" method="get">
+                <!-- <?xml version="1.0" ?>
+                    <svg id="close-form" version="1.1" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title/>
+                    <desc/>
+                    <defs/>
+                    <g fill="none" fill-rule="evenodd" id="miu" stroke="none" stroke-width="1">
+                    <g id="Artboard-1" transform="translate(-575.000000, -155.000000)">
+                    <g id="slice" transform="translate(215.000000, 119.000000)"/>
+                    <path d="M587.5,178 C593.851275,178 599,172.851275 599,166.5 C599,160.148725 593.851275,155 587.5,155 C581.148725,155 576,160.148725 576,166.5 C576,172.851275 581.148725,178 587.5,178 Z M587.5,177 C593.29899,177 598,172.29899 598,166.5 C598,160.70101 593.29899,156 587.5,156 C581.70101,156 577,160.70101 577,166.5 C577,172.29899 581.70101,177 587.5,177 Z M583.257359,171.449747 L582.550253,170.742641 L586.792893,166.5 L582.550253,162.257359 L583.257359,161.550253 L587.5,165.792893 L591.742641,161.550253 L592.449747,162.257359 L588.207107,166.5 L592.449747,170.742641 L591.742641,171.449747 L587.5,167.207107 L583.257359,171.449747 Z" fill="#000000" id="circle-close-delete-remove-outline-stroke"/>
+                </g></g></svg> -->
                 <label>Nombre de tarea:</label>
                 <input id="taskName" required type="text" placeholder="Ej: Lavar los platos">
                 <label for="clasification">Tipo de tarea:</label>
@@ -104,7 +114,7 @@
                     <button class="add-btn" id="add-task" type="submit">Agregar</button>
                 </div>
             </form>
-    </section>
+        </section>
     <!--BUTTON TO FORM-->
     <div class="icon">
         <svg class="plus" id="go-to-form" version="1.1" x="0px" y="0px"
@@ -125,62 +135,69 @@
         let descriptionInput = document.getElementById('taskDescription');
         let select = document.getElementById('clasification');
         //Reference to buttons:
-        let btnToOpenForm = document.getElementById('go-to-form');
-        let cancelButton = document.getElementById('cancel-add-task');
+        let openForm = document.getElementById('go-to-form');
+        let cancelAddTask = document.getElementById('cancel-add-task');
+        // let closeForm = document.getElementById('close-form') armar despues de solucionar ux
         let addTask = document.getElementById('add-task');
 
         //Reference to hidden/non-hidden elements:
-        let form = document.getElementById('form');
+        let form = document.getElementById('form-container');
         let dayOff = document.getElementById('no-tasks-message-container');
-        let tasksContainer = document.getElementById('tasks-container');
-        let ul = document.getElementById('tasks-list');
+        let tasksContainer = document.getElementById('tasks-container'); // lo importamos para que se muestre o no se muestre la lista de tareas
+        let ul = document.getElementById('tasks-list'); //lo importamos para apendear las tareas
         let li = document.createElement('li');
         
         //Listeners
-        btnToOpenForm.addEventListener('click', showForm);
-        cancelButton.addEventListener('click', showTasksOrMessage);
-        addTask.addEventListener('click', addTaskFunction);
+        openForm.addEventListener('click', showForm);
+        // cancelButton.addEventListener('click', showTasksOrMessage);
 
-        //Funciones:
-
-        function addTaskFunction () {
-            //Getting task name value:
-            let taskName = taskNameInput.value;
-            let description = descriptionInput.value;
-
-            //Getting select value:
+      
+        addTask.addEventListener("click", () => {
             let selectValue = select.value;
             let selectText = select.options[select.selectedIndex].text;
-
-            //adding it to our ul as a li:
-            ul.innerHTML += `<li><h5>${taskName}</h5> 
-                                <p>${description}</p>
-                                <p>clasificacion: ${selectText} </p>
+            let modelo = `<li><h4>${taskNameInput.value}</h4> 
+                                <p>${descriptionInput.value}</p>
+                                <p>clasificacion: ${selectText}</p>
                                 <button class="delete" title="delete" onclick="deleteItem()">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g id="Layer_20" data-name="Layer 20"><path d="M49.93,17.33H41.87V12a1.5,1.5,0,0,0-1.5-1.5H23.63a1.5,1.5,0,0,0-1.5,1.5v5.33H14.07a1.5,1.5,0,0,0,0,3H16V48a5.49,5.49,0,0,0,5.49,5.48h21.1A5.49,5.49,0,0,0,48,48V20.33h1.89A1.5,1.5,0,0,0,49.93,17.33ZM25.13,13.5H38.87v3.83H25.13ZM45,48a2.49,2.49,0,0,1-2.49,2.48H21.45A2.49,2.49,0,0,1,19,48V20.33H45Z"/><path d="M28,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,28,25.87Z"/><path d="M36,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,36,25.87Z"/></g></svg>
                                 </button>
                             </li>`
-        }
+        ul.innerHTML += modelo;
+        console.log(modelo) // aparece, no lo agrega a la lista de tasks y lo muestra debe ser por el display block de tasks container, arreglar eso
+        // taskNameInput.value = "";
+        // descriptionInput.value = "";
+    })
+        //Funciones:
+        function addTaskFunction () {
 
-        function showTasksOrMessage () {
-            if (ul.length === undefined) {
-                dayOff.style.display = "flex";
-                tasksContainer.style.display = "none";
-                form.style.display = "none";
-            } else {
-            tasksContainer.style.display = "flex";
-            }
-        }
+            //Getting task name value:
 
+            //Getting select value:
+        
+
+            //adding it to our ul as a li:
+            // modelo =  `<li><h5>${taskName}</h5> 
+            //                     <p>${description}</p>
+            //                     <p>clasificacion: ${selectText} </p>
+            //                     <button class="delete" title="delete" onclick="deleteItem()">
+            //                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g id="Layer_20" data-name="Layer 20"><path d="M49.93,17.33H41.87V12a1.5,1.5,0,0,0-1.5-1.5H23.63a1.5,1.5,0,0,0-1.5,1.5v5.33H14.07a1.5,1.5,0,0,0,0,3H16V48a5.49,5.49,0,0,0,5.49,5.48h21.1A5.49,5.49,0,0,0,48,48V20.33h1.89A1.5,1.5,0,0,0,49.93,17.33ZM25.13,13.5H38.87v3.83H25.13ZM45,48a2.49,2.49,0,0,1-2.49,2.48H21.45A2.49,2.49,0,0,1,19,48V20.33H45Z"/><path d="M28,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,28,25.87Z"/><path d="M36,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,36,25.87Z"/></g></svg>
+            //                     </button>
+            //                 </li>`
+            // ul.innerHTML += modelo;
+
+
+            // una vez que se carga una tarea se vacia el formulario
+            // selectValue.value = "";
+            // taskName.value = "";
+            // description.value = "";
+        }
+        
         function showForm() {
-        form.classList.add('form-container');
-        if (form.style.display === "none") {
-            form.style.display = "block";
+        // if (form.style.display === "none") {
+            form.style.display = "flex";
             tasksContainer.style.display = "none";
             dayOff.style.display = "none";
-            } else {
-                dayOff.style.display = "flex";
-            }
+         //   } 
         }
 
         function deleteItem() {
@@ -191,6 +208,8 @@
             }
         }
         }
+
+    
         
     </script>
 </body>
