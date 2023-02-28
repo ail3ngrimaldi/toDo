@@ -20,14 +20,6 @@ svg {
     min-height: 100vh;
 }
 
-.hidden {
-    display: none;
-}
-
-.active {
-    display: flex;
-}
-
 /*              NAV                 */
 
 header {
@@ -35,6 +27,9 @@ header {
     width: 100%;
     display: flex;
     background-color: #3300ff91;
+    -webkit-box-shadow: 9px 12px 16px -16px rgba(0,0,0,0.62);
+    -moz-box-shadow: 9px 12px 16px -16px rgba(0,0,0,0.62);
+    box-shadow: 9px 12px 16px -16px rgba(0,0,0,0.62);
 }
 
 nav {
@@ -54,12 +49,16 @@ nav {
     align-items: center;
 }
 
+.no-tasks-message-container h3 {
+    position: relative;
+    top: 50px;
+    color:rgba(43, 43, 43, 0.915)
+}
+
 .kitten {
     cursor: default;
     width: 300px;
     height: 300px;
-    *width: 389px;
-    *height: 216;
 }
 
 .icon {
@@ -74,8 +73,7 @@ nav {
     transition: transform .2s ease-out;
 }
 
-.plus:hover,
-.plus:active { /*cambiar despues por algo más lindo*/
+.plus:hover { /*cambiar despues por algo más lindo*/
     box-shadow: 2px 3px 5px 1px rgba(19, 19, 19, 0.325);
     transform: scale(1.3);
     border-radius:50%;
@@ -89,13 +87,17 @@ nav {
     justify-content: center;
     flex-direction: column;
     border-radius: 5px;
-    box-shadow: 1px 2px 10px 1px rgb(139, 139, 139);
+    box-shadow: 1px 1px 10px 1px rgba(139, 139, 139, 0.767);
     width: auto;
     min-width: 300px;
     background-color: rgb(225, 225, 225);
     text-align: center;
 }
 /*nice to have: animation when form appears*/
+
+.form-container h2 {
+    color: rgb(56, 56, 56);
+}
 
 form {
     display: flex;
@@ -124,6 +126,39 @@ input, select, textarea {
     font-family: Exo, 'sans serif';
 }
 
+.priority-container {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    transition: all 0.1s ;
+}
+
+.priority-container:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.priority-input:active {
+    transform: scale(0.9);
+}
+
+.priority-input:checked {
+    transform: scale(1.2);
+    border: 2px solid #fff;
+}
+
+.baja {
+    background-color:rgb(94, 197, 94);
+}
+
+.media {
+    background-color: rgb(247, 164, 10);
+}
+
+.alta {
+    background-color: rgb(253, 0, 0);
+}
+
 .btn-container {
     display: flex;
     justify-content: flex-end;
@@ -141,6 +176,19 @@ button {
     cursor: pointer;
 }
 
+.close {
+    position: relative;
+    right: -360px;
+    top: -60px;
+    /* display: flex;
+    align-items: flex-end;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start; */
+    
+}
+
 .cancel-btn {
     background-color: rgb(248, 64, 64);
 }
@@ -151,13 +199,13 @@ button {
 
 /*               TASKS LIST           */
 
-.tasks-container {
+.tasks-container {  
     display: none;
     flex-direction: column;
     margin: 20px;
 }
 
-h4 {
+.tasks-container h3 {
     background-color: blueviolet;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -171,16 +219,15 @@ h4 {
     font-size: 13px;
 }
 
+/*       TASK CARD        */
+
 .tasks-list li {
     background: #eee;
     padding: 5px;
     border-bottom: 0.5px solid gray;
     margin-left: -40px;
-    margin-right: 40px;
     display: flex;
-    *width: 100vw;
     *flex-direction: column;
-    width: 100%;
     border: 1px solid red;
 }
 
@@ -192,9 +239,51 @@ ul li:hover {
     background: #ddd;
 }
 
+.taskTitle {
+    padding: 10px;
+}
+
+.taskDescription {
+    display: flex;
+    align-items: center;
+}
+
+.selectedIcon {
+    display: flex;
+    align-self: center;
+    padding-left: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.priority-container {
+    display: flex;
+    align-self: center;
+    padding-left: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+/*    TASK STATE     */
+
+/*finished*/
+.finished {
+    text-decoration: line-through;
+}
+
+/*to delete*/
 .delete {
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+/*SHOW AND HIDE CLASSES*/
+.hidden {
+    display: none;
+}
+
+.active {
+    display: flex;
 }

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/styles.css">
     <title>To do list</title>
 </head>
@@ -23,7 +23,7 @@
             </g>
         </svg>
         <h2>To do list</h2>
-        <svg class="icon"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+        <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
                 <g id="Layer_1">
                 <path d="M25,1C11.767,1,1,11.767,1,25c0,7.091,3.094,13.472,8,17.869v0.017l0.348,0.3c0.061,0.053,0.128,0.097,0.19,0.149
                 c0.431,0.364,0.875,0.713,1.331,1.047c0.123,0.09,0.246,0.177,0.371,0.264c0.484,0.34,0.979,0.664,1.487,0.968
@@ -54,7 +54,8 @@
         </nav>
     </header>
     <!--NO TASKS YET-->
-    <div id="no-tasks-message-container" class="no-tasks-message-container">
+    <div id="notasks-container" class="no-tasks-message-container">
+        <h3 class="no-tasks-message" id="no-tasks-message">Parece que hoy tienes el día libre...</h3>
         <svg class="kitten" viewBox="0 0 389 216" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M71.426 87.9658C82.1725 59.3085 107.092 37.6144 143.517 22.1435C185.16 4.45658 222.325 -4.27494 266.878 7.14324C283.777 11.4742 291.505 20.1286 306.058 24.8302C317.381 28.4885 328.783 28.4375 341.88 34.6811C352.897 39.9334 365.696 48.5655 375.238 54.6069C379.584 57.3581 383.37 59.4988 385.666 60.752C386.475 61.1935 386.328 62.4229 385.435 62.6513L369.797 66.6518C369.231 66.7966 368.904 67.3928 369.071 67.9528C369.669 69.9665 370.837 74.4985 370.313 77.6671C369.567 82.1833 364.716 87.9658 364.716 87.9658C364.716 87.9658 370.028 89.9684 373 91.9958C374.403 92.9528 376.044 94.4342 377.263 95.5993C377.916 96.2243 377.438 97.3691 376.535 97.4222C375.213 97.4999 373.386 97.6683 371.1 98.0227C371.024 98.0345 370.95 98.0547 370.879 98.0832C362.58 101.41 348.339 102.742 340.536 102.742C325.656 102.742 317.028 106.101 302.476 104.533C303.667 112.959 303.24 118.133 300.685 126.25C298.167 134.246 289.938 144.833 289.938 144.833C289.938 144.833 290.748 156.825 285.46 160.057C282.369 161.946 281.002 162.452 276.281 161.4C272.699 160.602 269.116 148.514 264.415 140.355C260.731 133.961 256.803 128.661 251.654 126.25C241.131 121.325 224.116 136.325 205.981 145.952C202.912 147.581 198.749 148.437 194.919 148.881C193.717 149.021 193.329 151.949 194.463 152.37C200.568 154.634 208.083 158.126 212.474 162.744C219.695 170.339 230.161 182.446 224.116 186.923C222.419 188.18 219.788 188.269 217.456 188.005C216.366 187.881 215.396 189.667 216.16 190.456C219.57 193.978 224.116 199.434 224.116 203.491C224.116 209.174 218.656 213.953 212.474 212.222C208.187 211.022 205.555 205.763 201.727 203.491C187.399 194.983 150.234 190.953 144.86 186.923C140.384 183.566 144.352 174.687 139.935 171.251C135.905 168.117 115.33 167.112 101.427 157.37C87.3584 147.513 74.1126 122.892 74.1126 122.892C74.1126 122.892 46.7986 113.937 31.5744 136.773C14.8907 161.798 40.9776 217.432 31.5744 213.789C18.3113 208.652 7.29585 187.161 6.54053 185.662C6.51072 185.603 6.49183 185.552 6.47505 185.488C6.01352 183.725 -0.854487 156.942 3.36483 140.355C8.46139 120.32 15.0156 107.56 34.261 97.369C47.1165 90.562 69.0752 94.2346 71.426 87.9658Z" fill="#F2F2F2"/>
             <path d="M364.716 87.9658L363.596 89.9808M364.716 87.9658C364.716 87.9658 369.567 82.1834 370.313 77.6671C370.837 74.4985 369.669 69.9665 369.071 67.9528C368.904 67.3928 369.231 66.7966 369.797 66.6518L385.435 62.6513C386.328 62.4229 386.475 61.1935 385.666 60.752C383.37 59.4988 379.584 57.3581 375.239 54.6069C365.696 48.5655 352.897 39.9334 341.88 34.6811C328.783 28.4375 317.381 28.4885 306.058 24.8302C291.505 20.1286 283.777 11.4742 266.878 7.14324C222.325 -4.27494 185.16 4.45658 143.517 22.1435C107.092 37.6144 82.1725 59.3085 71.426 87.9658C69.0752 94.2346 47.1165 90.562 34.261 97.369C15.0156 107.56 8.46139 120.32 3.36483 140.355C-0.854487 156.942 6.01352 183.725 6.47505 185.488C6.49183 185.552 6.51071 185.603 6.54053 185.662C7.29585 187.161 18.3113 208.652 31.5744 213.789C40.9776 217.432 14.8907 161.798 31.5744 136.773C46.7986 113.937 74.1126 122.892 74.1126 122.892M364.716 87.9658C364.716 87.9658 370.028 89.9684 373 91.9958C374.403 92.9528 376.044 94.4342 377.263 95.5993C377.916 96.2243 377.438 97.3692 376.535 97.4222C375.213 97.4999 373.386 97.6683 371.1 98.0227C371.024 98.0345 370.95 98.0547 370.879 98.0832C362.58 101.41 348.339 102.742 340.536 102.742C325.656 102.742 317.028 106.101 302.476 104.533M302.476 104.533C302.476 102.96 302.476 100.503 302.476 100.503M302.476 104.533C303.667 112.959 303.24 118.133 300.685 126.25C298.167 134.246 289.938 144.833 289.938 144.833M289.938 144.833C289.938 144.833 290.748 156.825 285.46 160.057C282.369 161.946 281.002 162.452 276.281 161.4C272.699 160.602 269.116 148.514 264.415 140.355C260.731 133.961 256.803 128.661 251.654 126.25C241.131 121.325 224.116 136.325 205.981 145.952C202.912 147.581 198.749 148.437 194.919 148.881C193.717 149.021 193.329 151.949 194.463 152.37C200.568 154.634 208.083 158.126 212.474 162.744C219.695 170.339 230.161 182.446 224.116 186.923C222.419 188.18 219.788 188.269 217.456 188.005C216.366 187.881 215.396 189.667 216.16 190.456C219.57 193.978 224.116 199.434 224.116 203.491C224.116 209.174 218.656 213.953 212.474 212.222C208.187 211.022 205.555 205.763 201.727 203.491C187.399 194.983 150.234 190.953 144.86 186.923C140.384 183.566 144.352 174.687 139.935 171.251C135.905 168.117 115.33 167.112 101.427 157.37C87.3584 147.513 74.1126 122.892 74.1126 122.892M289.938 144.833L282.326 130.056M74.1126 122.892L78.5903 121.773M282.326 130.056C282.326 130.056 282.326 113.713 279.192 111.698C275.77 109.498 271.271 110.149 269.788 113.937C267.774 119.086 282.326 130.056 282.326 130.056Z" stroke="#3300FF" stroke-opacity="0.7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -67,48 +68,54 @@
             <path d="M335.387 76.9955L337.33 77.4704L335.387 76.9955ZM336.506 75.6521L337.401 73.8633C337.123 73.7244 336.817 73.6521 336.506 73.6521V75.6521ZM333.444 76.5205C333.258 77.2838 333.351 77.9781 333.491 78.5006C333.629 79.0132 333.838 79.4529 333.968 79.7194C334.047 79.8807 334.081 79.9464 334.115 80.0203C334.154 80.1061 334.112 80.0334 334.08 79.8877C334.064 79.8151 333.895 79.1003 334.427 78.4059C334.977 77.6869 335.738 77.6821 335.835 77.6821V81.6821C336.117 81.6821 336.992 81.6353 337.603 80.8376C338.195 80.0644 338.032 79.2342 337.983 79.0147C337.918 78.722 337.805 78.471 337.75 78.3521C337.69 78.2213 337.608 78.0562 337.563 77.9657C337.289 77.4027 337.358 77.354 337.33 77.4704L333.444 76.5205ZM335.835 77.6821C336.07 77.6821 336.26 77.7567 336.383 77.8349C336.498 77.9077 336.544 77.9749 336.549 77.9825C336.554 77.9894 336.491 77.8838 336.491 77.6671H332.491C332.491 78.5633 332.73 79.4651 333.221 80.2013C333.702 80.9235 334.587 81.6821 335.835 81.6821V77.6821ZM336.491 77.6671C336.491 77.6931 336.489 77.7173 336.486 77.739C336.483 77.7607 336.479 77.7791 336.475 77.7939C336.471 77.8087 336.467 77.8196 336.464 77.8267C336.461 77.8338 336.459 77.8373 336.459 77.8374C336.459 77.8375 336.461 77.8346 336.465 77.8291C336.468 77.8235 336.474 77.8159 336.482 77.8064C336.489 77.7969 336.499 77.7862 336.51 77.7745C336.521 77.7629 336.534 77.7507 336.548 77.7384C336.562 77.7261 336.576 77.714 336.592 77.7024C336.607 77.6909 336.622 77.6802 336.637 77.6705C336.652 77.6608 336.666 77.6525 336.678 77.6456C336.69 77.6388 336.701 77.6337 336.708 77.6303C336.716 77.6269 336.719 77.6256 336.719 77.6258C336.718 77.626 336.711 77.6284 336.699 77.6317C336.686 77.6349 336.664 77.6398 336.634 77.6439C336.603 77.6481 336.561 77.6521 336.506 77.6521V73.6521C335.477 73.6521 334.52 74.1901 333.893 74.7462C333.232 75.3328 332.491 76.3379 332.491 77.6671H336.491ZM335.612 77.441C335.475 77.3727 334.741 76.9777 334.612 76.01C334.495 75.1378 334.995 74.5887 335.043 74.534C335.153 74.4094 335.241 74.3504 335.2 74.3811C335.173 74.401 335.138 74.4251 335.043 74.4912C334.895 74.5934 334.593 74.8007 334.314 75.0688C334.045 75.3274 333.618 75.8078 333.444 76.5205L337.33 77.4704C337.285 77.6532 337.213 77.7817 337.165 77.8528C337.141 77.8889 337.12 77.9143 337.107 77.9294C337.094 77.9446 337.086 77.9524 337.085 77.953C337.085 77.9536 337.089 77.9495 337.1 77.9404C337.111 77.9313 337.126 77.9191 337.147 77.9034C337.191 77.8697 337.243 77.833 337.319 77.78C337.381 77.7376 337.493 77.661 337.591 77.5874C337.676 77.5245 337.868 77.3792 338.047 77.1749C338.166 77.0404 338.702 76.4181 338.576 75.4787C338.438 74.4439 337.649 73.9876 337.401 73.8633L335.612 77.441Z" fill="#3300FF" fill-opacity="0.7" mask="url(#path-5-inside-1_6_65)"/>
             <line x1="347.24" y1="92.2673" x2="344.869" y2="85.3838" stroke="#3300FF" stroke-opacity="0.7" stroke-width="2"/>
         </svg>
-        <h2 class="no-tasks-message" id="no-tasks-message">Parece que hoy tienes el día libre...</h2>
     </div>
     <!--TASKS LIST-->
     <div class="tasks-container" id="tasks-container">
-        <h4>Tareas:</h4>
+        <h3>Tareas:</h3>
         <ul class="tasks-list" id="tasks-list">
         </ul>
     </div>
     <!--FORM-->
-    <section class="form-container" id="form-container">
+    <section class="form-container" id="form">
             <h2>Añade una tarea</h2>
             <form action="#" method="get">
-                <!-- <?xml version="1.0" ?>
-                    <svg id="close-form" version="1.1" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <title/>
-                    <desc/>
-                    <defs/>
+                    <svg id="close-form" class="close" version="1.1" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g fill="none" fill-rule="evenodd" id="miu" stroke="none" stroke-width="1">
                     <g id="Artboard-1" transform="translate(-575.000000, -155.000000)">
                     <g id="slice" transform="translate(215.000000, 119.000000)"/>
                     <path d="M587.5,178 C593.851275,178 599,172.851275 599,166.5 C599,160.148725 593.851275,155 587.5,155 C581.148725,155 576,160.148725 576,166.5 C576,172.851275 581.148725,178 587.5,178 Z M587.5,177 C593.29899,177 598,172.29899 598,166.5 C598,160.70101 593.29899,156 587.5,156 C581.70101,156 577,160.70101 577,166.5 C577,172.29899 581.70101,177 587.5,177 Z M583.257359,171.449747 L582.550253,170.742641 L586.792893,166.5 L582.550253,162.257359 L583.257359,161.550253 L587.5,165.792893 L591.742641,161.550253 L592.449747,162.257359 L588.207107,166.5 L592.449747,170.742641 L591.742641,171.449747 L587.5,167.207107 L583.257359,171.449747 Z" fill="#000000" id="circle-close-delete-remove-outline-stroke"/>
-                </g></g></svg> -->
-                <label>Nombre de tarea:</label>
-                <input id="taskName" required type="text" placeholder="Ej: Lavar los platos">
+                </g></g></svg>
+                <label for="taskName">Nombre de tarea:</label>
+                <input 
+                    id="task-name" 
+                    type="text" 
+                    placeholder="Ej: Lavar los platos" 
+                    name="taskName">
                 <label for="clasification">Tipo de tarea:</label>
                 <select name="clasification" id="clasification" required placeholder="Doméstica">
-                    <option id="taskClassification" value="trabajo">Personal</option>
-                    <option id="taskClassification" value="domestica">Doméstica</option>
-                    <option id="taskClassification" value="entretenimiento">Entretenimiento</option>
-                    <option id="taskClassification" value="laboral">Laboral</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Domestica">Doméstica</option>
+                    <option value="Entretenimiento">Entretenimiento</option>
+                    <option value="Laboral">Laboral</option>
                 </select>
                 <label>Descripción</label>
-                <textarea id="taskDescription" placeholder="Ej: Hacerlo antes de las 10am porque a las 11am cortan el agua." required rows="3" type="textarea"></textarea>
+                <textarea 
+                    id="task-description" 
+                    placeholder="Ej: Hacerlo antes de las 10am porque a las 11am cortan el agua." 
+                    rows="3" 
+                    type="textarea" 
+                    name="description">
+                </textarea>
                 <br>
-                
-                <!-- <div class="input-radio-container">
+                <div class="input-radio-container">
                     <label>Prioridad:</label>
-                    <input name="priority" data-type="horizontal" type="radio" id="taskPriority" name="" checked>
-                    <input name="priority" data-type="horizontal" type="radio" id="taskPriority" name="" checked>
-                    <input name="priority" data-type="horizontal" type="radio" id="taskPriority" name="" checked>
-                    <input name="priority" data-type="horizontal" type="radio" id="taskPriority" name="" checked>
-                </div> -->
+                    <label>Baja:</label>
+                    <input class="priority-input baja" name="priority" data-type="horizontal" type="radio">
+                    <label>Media:</label>
+                    <input class="priority-input media" name="priority" data-type="horizontal" type="radio">
+                    <label>Alta:</label>
+                    <input class="priority-input alta" name="priority" data-type="horizontal" type="radio">
+                </div> 
                 <div class="btn-container">
                     <button class="cancel-btn" id="cancel-add-task">Cancelar</button>
                     <button class="add-btn" id="add-task" type="submit">Agregar</button>
@@ -118,7 +125,7 @@
     <!--BUTTON TO FORM-->
     <div class="icon">
         <svg class="plus" id="go-to-form" version="1.1" x="0px" y="0px"
-        width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+        viewBox="0 0 64 64" xml:space="preserve">
         <g>
             <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="32" y1="50" x2="32" y2="14"/>
             <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="14" y1="32" x2="50" y2="32"/>
@@ -129,88 +136,6 @@
         </svg>
     </div>
 </div>
-    <script>
-        //Reference to input:
-        let taskNameInput = document.getElementById('taskName');
-        let descriptionInput = document.getElementById('taskDescription');
-        let select = document.getElementById('clasification');
-        //Reference to buttons:
-        let openForm = document.getElementById('go-to-form');
-        let cancelAddTask = document.getElementById('cancel-add-task');
-        // let closeForm = document.getElementById('close-form') armar despues de solucionar ux
-        let addTask = document.getElementById('add-task');
-
-        //Reference to hidden/non-hidden elements:
-        let form = document.getElementById('form-container');
-        let dayOff = document.getElementById('no-tasks-message-container');
-        let tasksContainer = document.getElementById('tasks-container'); // lo importamos para que se muestre o no se muestre la lista de tareas
-        let ul = document.getElementById('tasks-list'); //lo importamos para apendear las tareas
-        let li = document.createElement('li');
-        
-        //Listeners
-        openForm.addEventListener('click', showForm);
-        // cancelButton.addEventListener('click', showTasksOrMessage);
-
-      
-        addTask.addEventListener("click", () => {
-            let selectValue = select.value;
-            let selectText = select.options[select.selectedIndex].text;
-            let modelo = `<li><h4>${taskNameInput.value}</h4> 
-                                <p>${descriptionInput.value}</p>
-                                <p>clasificacion: ${selectText}</p>
-                                <button class="delete" title="delete" onclick="deleteItem()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g id="Layer_20" data-name="Layer 20"><path d="M49.93,17.33H41.87V12a1.5,1.5,0,0,0-1.5-1.5H23.63a1.5,1.5,0,0,0-1.5,1.5v5.33H14.07a1.5,1.5,0,0,0,0,3H16V48a5.49,5.49,0,0,0,5.49,5.48h21.1A5.49,5.49,0,0,0,48,48V20.33h1.89A1.5,1.5,0,0,0,49.93,17.33ZM25.13,13.5H38.87v3.83H25.13ZM45,48a2.49,2.49,0,0,1-2.49,2.48H21.45A2.49,2.49,0,0,1,19,48V20.33H45Z"/><path d="M28,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,28,25.87Z"/><path d="M36,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,36,25.87Z"/></g></svg>
-                                </button>
-                            </li>`
-        ul.innerHTML += modelo;
-        console.log(modelo) // aparece, no lo agrega a la lista de tasks y lo muestra debe ser por el display block de tasks container, arreglar eso
-        // taskNameInput.value = "";
-        // descriptionInput.value = "";
-    })
-        //Funciones:
-        function addTaskFunction () {
-
-            //Getting task name value:
-
-            //Getting select value:
-        
-
-            //adding it to our ul as a li:
-            // modelo =  `<li><h5>${taskName}</h5> 
-            //                     <p>${description}</p>
-            //                     <p>clasificacion: ${selectText} </p>
-            //                     <button class="delete" title="delete" onclick="deleteItem()">
-            //                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g id="Layer_20" data-name="Layer 20"><path d="M49.93,17.33H41.87V12a1.5,1.5,0,0,0-1.5-1.5H23.63a1.5,1.5,0,0,0-1.5,1.5v5.33H14.07a1.5,1.5,0,0,0,0,3H16V48a5.49,5.49,0,0,0,5.49,5.48h21.1A5.49,5.49,0,0,0,48,48V20.33h1.89A1.5,1.5,0,0,0,49.93,17.33ZM25.13,13.5H38.87v3.83H25.13ZM45,48a2.49,2.49,0,0,1-2.49,2.48H21.45A2.49,2.49,0,0,1,19,48V20.33H45Z"/><path d="M28,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,28,25.87Z"/><path d="M36,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,36,25.87Z"/></g></svg>
-            //                     </button>
-            //                 </li>`
-            // ul.innerHTML += modelo;
-
-
-            // una vez que se carga una tarea se vacia el formulario
-            // selectValue.value = "";
-            // taskName.value = "";
-            // description.value = "";
-        }
-        
-        function showForm() {
-        // if (form.style.display === "none") {
-            form.style.display = "flex";
-            tasksContainer.style.display = "none";
-            dayOff.style.display = "none";
-         //   } 
-        }
-
-        function deleteItem() {
-        var currentTasks = document.querySelectorAll(".delete");
-            for(var i=0; i < currentTasks.length; i++){
-            currentTasks[i].onclick = function(){
-                this.parentNode.remove();
-            }
-        }
-        }
-
-    
-        
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
