@@ -1,32 +1,53 @@
 /*                  GENERALES                 */
 
+:root {
+    --primary: #3300ff91;
+    --high-priority: rgb(239, 65, 65);
+    --middle-priority: rgb(246, 178, 52);
+    --low-priority: rgb(75, 240, 75);
+    --cancel: rgb(200, 120, 120);
+    --add: rgb(54, 188, 232);
+    --black: #313154;
+    --white: #EEE;
+    --grey: #888;
+
+    --shadow: 9px 12px 16px -16px rgba(0,0,0,0.62);
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: 'Exo', sans-serif;
+    accent-color: var(--primary);
+    *letter-spacing: -0.5px;
+    background-color: #d05bff;
+    background-image: linear-gradient(180deg, #d05bff 0%, #80D0C7 100%);
+}
+
+h2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 2.5rem;
 }
 
 svg {
     width: 2em;
     height: 2em;
-    cursor: pointer;
+    fill: var(--black);
 }
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-}
-
 /*              NAV                 */
 
 header {
-    height: 50px;
+    height: 3.125rem;
     width: 100%;
     display: flex;
-    background-color: #3300ff91;
+    background-color: transparent;
     -webkit-box-shadow: 9px 12px 16px -16px rgba(0,0,0,0.62);
     -moz-box-shadow: 9px 12px 16px -16px rgba(0,0,0,0.62);
     box-shadow: 9px 12px 16px -16px rgba(0,0,0,0.62);
@@ -40,161 +61,164 @@ nav {
     margin: 1em;
 }
 
-/*                 BODY                 */
+/*                 INITIAL MESSAGE                 */
 
-.no-tasks-message-container {
+.init-container { /*ok*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.no-tasks-message-container h3 {
+.init-container h3 { /*ok*/
     position: relative;
-    top: 50px;
-    color:rgba(43, 43, 43, 0.915)
+    top: 30px;
+    color: var(--white);
+    font-size: 1.825rem;
+    font-style: italic;
+    letter-spacing: -0.7px;
 }
-
-.kitten {
-    cursor: default;
+.init-gif {
     width: 300px;
     height: 300px;
 }
+
+/*     MAIN BUTTONS    */
 
 .icon {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 1em 1em;
+    margin: 1em;
 }
 
 .plus {
-    transform: scale(1.1);
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
     transition: transform .2s ease-out;
 }
+.plus {
+    filter: grayscale(1);
+}
 
-.plus:hover { /*cambiar despues por algo más lindo*/
-    box-shadow: 2px 3px 5px 1px rgba(19, 19, 19, 0.325);
-    transform: scale(1.3);
-    border-radius:50%;
+
+.plus:hover { /*ok*/
+    box-shadow: var(--shadow);
+    transform: scale(1.2);
+    border-radius: 50%;
 }
 
 /*                    FORM                 */
 
-.form-container {
+.form-section {
     display: none;
     align-self: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 5px;
-    box-shadow: 1px 1px 10px 1px rgba(139, 139, 139, 0.767);
+    border-radius: 10px;
+    border: 0.25em solid var(--white);
+    padding-top: .5em;
     width: auto;
-    min-width: 300px;
-    background-color: rgb(225, 225, 225);
+    min-width: 290px;
+    max-height: 400px;
+    background-color: rgba(255, 255, 255, 0.326);
     text-align: center;
+    padding: 1.225em;
+    margin-top: .5em;
 }
 /*nice to have: animation when form appears*/
 
-.form-container h2 {
-    color: rgb(56, 56, 56);
+.form-section h2 {
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-section input[type="text"] {
+	color: var(--dark);
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
 }
 
 form {
     display: flex;
-    width: auto;
-    margin-bottom: 1em;
+    padding: 1em;
 }
 
-form, 
+form,
 h2 {
-    text-align: center;
+    text-align: left;
     flex-direction: column;
+    color: var(--black);
+    font-weight: 600;
 }
 
-label {
-    font-size: 13px;
-    color:rgb(61, 61, 61);
-    align-items: flex-start;
+label, p {
+    color: var(--black);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.7em;
+
+}
+
+.priority-label {
+    padding: 0;
+    padding-bottom: .2em;
+    margin: 0;
+}
+
+.priority-container label {
+    font-weight: 400;
 }
 
 input, select, textarea {
     justify-content: center;
     outline: none;
     border: none;
-    margin: 0.5em 2em;
-    border-radius: 2px;
-    font-family: Exo, 'sans serif';
+    margin-bottom: 1em;
+    padding: 0.35rem 1rem;
+    border-radius: 5px;
 }
 
-.priority-container {
-    display: flex;
-    height: 100%;
-    width: 50%;
-    transition: all 0.1s ;
-}
-
-.priority-container:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.priority-input:active {
-    transform: scale(0.9);
-}
-
-.priority-input:checked {
-    transform: scale(1.2);
-    border: 2px solid #fff;
-}
-
-.baja {
-    background-color:rgb(94, 197, 94);
-}
-
-.media {
-    background-color: rgb(247, 164, 10);
-}
-
-.alta {
-    background-color: rgb(253, 0, 0);
+.priority-input {
+    margin: .5em;
+    align-self: center;
 }
 
 .btn-container {
     display: flex;
     justify-content: flex-end;
-    margin-right: 2em;
 }
 
 button {
     margin-top: .925em; /*refactor*/
     margin-left: 0.725em; /*refactor*/
+    margin-bottom: .925em;
     padding: 0.725em;
     border: none;
-    border-radius: 2px;
-    font-family: Exo, 'sans serif';
-    font-weight: 500;
+    border-radius: 5px;
+    font-weight: 600;
     cursor: pointer;
+    color: var(--black);
+    transition: 0.2s ease-out;
 }
 
 .close {
     position: relative;
-    right: -360px;
-    top: -60px;
-    /* display: flex;
-    align-items: flex-end;
-    align-content: space-around;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start; */
-    
+    right: -250px;
+    top: -70px;
+    cursor: pointer;
 }
 
 .cancel-btn {
-    background-color: rgb(248, 64, 64);
+    background-color: var(--cancel);
 }
 
 .add-btn {
-    background-color: rgb(62, 68, 225);
+    background-color: var(--add);
 }
 
 /*               TASKS LIST           */
@@ -203,6 +227,10 @@ button {
     display: none;
     flex-direction: column;
     margin: 20px;
+    width: 70%;
+    justify-content: flex-start;
+    align-items: center;
+
 }
 
 .tasks-container h3 {
@@ -211,6 +239,7 @@ button {
     border-top-left-radius: 5px;
     padding: 10px 35px;
     margin: 0;
+    margin-bottom: .2em;
 }
 
 .tasks-list {
@@ -228,14 +257,18 @@ button {
     margin-left: -40px;
     display: flex;
     *flex-direction: column;
-    border: 1px solid red;
 }
 
-ul li:nth-child(odd) {
+.list-item {
+    display: flex;
+    justify-content: space-between;
+}  
+
+div li:nth-child(odd) {
     background: #f9f9f9;
 }
 
-ul li:hover {
+div li:hover {
     background: #ddd;
 }
 
@@ -256,19 +289,42 @@ ul li:hover {
     height: 40px;
 }
 
+/* PRIORITY COLORS */
+
 .priority-container {
+    grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.baja {
+    border-left: 1rem solid var(--low-priority) !important;
+}
+
+.media {
+    border-left: 1rem solid var(--middle-priority) !important;
+}
+
+.alta {
+    border-left: 1rem solid var(--high-priority) !important;
+}
+
+.task-btns-container{
     display: flex;
-    align-self: center;
-    padding-left: 10px;
-    width: 40px;
-    height: 40px;
+    justify-content: center;
+    align-items: center;
 }
 
 /*    TASK STATE     */
 
 /*finished*/
-.finished {
+.list-item.done .list-item.taskDescription .list-item.taskTitle {
     text-decoration: line-through;
+    color: var(--grey);
+}
+
+.todo-item.done .task-content input {
+	text-decoration: line-through;
+	color: var(--grey);
 }
 
 /*to delete*/
@@ -277,6 +333,11 @@ ul li:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    transition: transform .2s ease-out;
+}
+
+.delete:hover {
+    transform: scale(1.1);
 }
 
 /*SHOW AND HIDE CLASSES*/
@@ -286,4 +347,16 @@ ul li:hover {
 
 .active {
     display: flex;
+}
+
+.input-content {
+    display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: var(--dark);
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1.5rem;
 }
