@@ -119,6 +119,14 @@ function addTask() {
         // Muestra u oculta el mensaje inicial según corresponda
         showHideInitMessage(tasks);
 
+         // Oculta el formulario
+         toggleModal(modal, 'active');
+
+         // Revisa si debe mostrar la lista de tareas
+         if(tasks.length > 0) {
+             tasksContainer.style.display = 'flex';
+         }
+
         e.target.reset();
     })
 }
