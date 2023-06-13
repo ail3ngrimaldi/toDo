@@ -68,6 +68,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 80vh;
 }
 .init-container h3 { /*ok*/
     position: relative;
@@ -224,7 +225,7 @@ button {
 /*               TASKS LIST           */
 
 .tasks-container {  
-    display: none;
+    display: flex;
     flex-direction: column;
     margin: 20px;
     width: 70%;
