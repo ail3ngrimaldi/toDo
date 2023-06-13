@@ -2,9 +2,9 @@
 
 :root {
     --primary: #3300ff91;
-    --high-priority: rgb(239, 65, 65);
-    --middle-priority: rgb(246, 178, 52);
-    --low-priority: rgb(75, 240, 75);
+    --high-priority: #e42e2e;
+    --middle-priority: #f4d35e;
+    --low-priority: #52c788;
     --cancel: rgb(200, 120, 120);
     --add: rgb(54, 188, 232);
     --black: #313154;
@@ -21,6 +21,8 @@
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Añadir para centrar verticalmente */
+    align-items: center; /* Añadir para centrar horizontalmente */
     box-sizing: border-box;
     min-height: 100vh;
     margin: 0;
@@ -161,8 +163,7 @@ label, p {
     color: var(--black);
     font-size: 0.875rem;
     font-weight: 700;
-    margin-bottom: 0.7em;
-
+    margin: 0.7em 0px;
 }
 
 .priority-label {
@@ -224,29 +225,44 @@ button {
 
 /*               TASKS LIST           */
 
-.tasks-container {  
+.tasks-container {
     display: flex;
     flex-direction: column;
     margin: 20px;
-    width: 70%;
-    justify-content: flex-start;
+    width: 90%;
+    justify-content: center;
     align-items: center;
-
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.326); /* Ajustado para ser similar a form-section */
+    border-radius: 10px; /* Ajustado para ser similar a form-section */
+    border: 0.25em solid var(--white); /* Ajustado para ser similar a form-section */
+    padding: 1.225em; /* Ajustado para ser similar a form-section */
+    box-shadow: 9px 12px 16px -16px rgba(0,0,0,0.62); /* Ajustado para ser similar a header */
 }
 
 .tasks-container h3 {
-    background-color: blueviolet;
+    color: var(--black); /* Ajustado para ser similar a h2 dentro de form-section */
+    font-size: 2rem; /* Ajustado para ser similar a h2 dentro de form-section */
+    font-weight: 600; /* Ajustado para ser similar a h2 dentro de form-section */
+    background-color: transparent; /* Ajustado para ser similar a h2 dentro de form-section */
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 10px 35px;
     margin: 0;
     margin-bottom: .2em;
+    text-align: center; /* Ajustado para ser similar a h2 dentro de form-section */
 }
 
 .tasks-list {
     margin: 0;
     list-style: none;
-    font-size: 13px;
+    font-size: 1.125rem; /* Ajustado para ser similar al tamaño de texto del input en form-section */
+    padding: 1rem 1.5rem; /* Ajustado para ser similar al padding del input en form-section */
+    color: var(--dark); /* Ajustado para ser similar al color del input en form-section */
+    background-color: #FFF; /* Ajustado para ser similar al color de fondo del input en form-section */
+    border-radius: 0.5rem; /* Ajustado para ser similar al border radius del input en form-section */
+    box-shadow: var(--shadow); /* Ajustado para ser similar a la sombra del input en form-section */
+    margin-bottom: 1.5rem; /* Ajustado para ser similar al margen inferior del input en form-section */
 }
 
 /*       TASK CARD        */
@@ -286,9 +302,22 @@ div li:hover {
     display: flex;
     align-self: center;
     padding-left: 10px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
+
+.input-content {
+    display: block;
+	width: 120%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: var(--dark);
+	background-color: #ffffff41;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: .5rem;
+}
+
 
 /* PRIORITY COLORS */
 
@@ -348,16 +377,4 @@ div li:hover {
 
 .active {
     display: flex;
-}
-
-.input-content {
-    display: block;
-	width: 100%;
-	font-size: 1.125rem;
-	padding: 1rem 1.5rem;
-	color: var(--dark);
-	background-color: #FFF;
-	border-radius: 0.5rem;
-	box-shadow: var(--shadow);
-	margin-bottom: 1.5rem;
 }

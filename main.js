@@ -6,6 +6,8 @@ let modal = document.querySelector('#modal');
 // Inicializamos las tareas como un array vacio:
 let tasks = [];
 
+const generateId = () => Math.random().toString(36).substring(2, 15);
+
 const toggleModal = (modal, className) => {
     modal.classList.toggle(className);
 }
@@ -54,17 +56,16 @@ const createTaskElement = (task) => {
             break;
     }
 
-    let addedTask = `<div class="list-item priority-container ${task.priority}">
+    let addedTask = `<div id="${task.id}" class="list-item priority-container ${task.priority}">
                         <img alt=${task.category} class="selectedIcon"src=${selectIcon}></img>
-                        <div class=task-content>        
+                        <div class="task-content">        
                             <input class="input-content" type="text" value=${task.name} readonly />
                         </div>
                         <div class="task-btns-container">
                             <div class="content-container">
                                 <input class="checked-input" type="checkbox" checked=${task.done} onclick="checkItem()"/>
                             </div>
-                            <button class="edit" title="edit" onclick="editItem()"></button>
-                            <button class="delete" title="delete" onclick="deleteItem()"></button>
+                            <button class="delete" title="delete" onclick="deleteItem('${task.id}')">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g id="Layer_20" data-name="Layer 20"><path d="M49.93,17.33H41.87V12a1.5,1.5,0,0,0-1.5-1.5H23.63a1.5,1.5,0,0,0-1.5,1.5v5.33H14.07a1.5,1.5,0,0,0,0,3H16V48a5.49,5.49,0,0,0,5.49,5.48h21.1A5.49,5.49,0,0,0,48,48V20.33h1.89A1.5,1.5,0,0,0,49.93,17.33ZM25.13,13.5H38.87v3.83H25.13ZM45,48a2.49,2.49,0,0,1-2.49,2.48H21.45A2.49,2.49,0,0,1,19,48V20.33H45Z"/><path d="M28,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,28,25.87Z"/><path d="M36,25.87a1.5,1.5,0,0,0-1.5,1.5V43.46a1.5,1.5,0,1,0,3,0V27.37A1.5,1.5,0,0,0,36,25.87Z"/></g></svg>
                             </button>
                         </div>
@@ -103,6 +104,7 @@ function addTask() {
         let taskPriority = document.querySelector('input[name="priority"]:checked').classList[1];
 
         let task = {
+            id: generateId(),
             name: e.target.elements.taskName.value,
             category: e.target.elements.clasification.value,
             priority: taskPriority,
@@ -133,9 +135,18 @@ function addTask() {
 document.querySelector('#add-task').addEventListener('click', addTask);
 
 
-const deleteItem = () => { 
+const deleteItem = (id) => { 
     alert('you deleted me');
+    let taskElement = document.querySelector(`#${id}`);
+    taskElement.parentNode.removeChild(taskElement);
+
+    // Borra el elemento de la lista en localStorage
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks = tasks.filter(task => task.id !== id);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
     showHideInitMessage(tasks);
+
 }
 
 const checkItem = () => { 
