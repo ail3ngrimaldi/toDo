@@ -120,14 +120,13 @@ nav {
     flex-direction: column;
     border-radius: 10px;
     border: 0.25em solid var(--white);
-    padding-top: .5em;
     width: auto;
     min-width: 290px;
     max-height: 400px;
     background-color: rgba(255, 255, 255, 0.326);
     text-align: center;
-    padding: 1.225em;
-    margin-top: .5em;
+    padding: 2%;
+    margin: 2%;
 }
 /*nice to have: animation when form appears*/
 
@@ -157,6 +156,7 @@ h2 {
     flex-direction: column;
     color: var(--black);
     font-weight: 600;
+    box-sizing: border-box;
 }
 
 label, p {
@@ -196,22 +196,20 @@ input, select, textarea {
 }
 
 button {
-    margin-top: .925em; /*refactor*/
-    margin-left: 0.725em; /*refactor*/
-    margin-bottom: .925em;
+    margin: 1.25em 0.02em .925em 1.725em; 
     padding: 0.725em;
     border: none;
     border-radius: 5px;
     font-weight: 600;
     cursor: pointer;
     color: var(--black);
-    transition: 0.2s ease-out;
+    *transition: 0.2s ease-out;
 }
 
 .close {
     position: relative;
     right: -250px;
-    top: -70px;
+    top: -85px;
     cursor: pointer;
 }
 
@@ -241,28 +239,28 @@ button {
 }
 
 .tasks-container h3 {
-    color: var(--black); /* Ajustado para ser similar a h2 dentro de form-section */
-    font-size: 2rem; /* Ajustado para ser similar a h2 dentro de form-section */
-    font-weight: 600; /* Ajustado para ser similar a h2 dentro de form-section */
-    background-color: transparent; /* Ajustado para ser similar a h2 dentro de form-section */
+    color: var(--black); 
+    font-size: 2rem; 
+    font-weight: 600; 
+    background-color: transparent;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 10px 35px;
     margin: 0;
     margin-bottom: .2em;
-    text-align: center; /* Ajustado para ser similar a h2 dentro de form-section */
+    text-align: center;
 }
 
 .tasks-list {
     margin: 0;
     list-style: none;
-    font-size: 1.125rem; /* Ajustado para ser similar al tamaño de texto del input en form-section */
-    padding: 1rem 1.5rem; /* Ajustado para ser similar al padding del input en form-section */
-    color: var(--dark); /* Ajustado para ser similar al color del input en form-section */
-    background-color: #FFF; /* Ajustado para ser similar al color de fondo del input en form-section */
-    border-radius: 0.5rem; /* Ajustado para ser similar al border radius del input en form-section */
-    box-shadow: var(--shadow); /* Ajustado para ser similar a la sombra del input en form-section */
-    margin-bottom: 1.5rem; /* Ajustado para ser similar al margen inferior del input en form-section */
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: var(--dark);
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
 }
 
 /*       TASK CARD        */
@@ -273,7 +271,6 @@ button {
     border-bottom: 0.5px solid gray;
     margin-left: -40px;
     display: flex;
-    *flex-direction: column;
 }
 
 .list-item {
@@ -318,9 +315,7 @@ div li:hover {
 	margin-bottom: .5rem;
 }
 
-
 /* PRIORITY COLORS */
-
 .priority-container {
     grid-template-columns: repeat(3, 1fr);
 	grid-gap: 1rem;
