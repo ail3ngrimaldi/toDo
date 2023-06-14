@@ -79,6 +79,7 @@ openFormButton.addEventListener('click', () => {
     toggleModal(modal, 'active');
     tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasksContainer.style.display = 'none';  // Ocultar el contenedor de tareas
+    initMessage.style.display = 'none';  // Agregamos esta línea para ocultar el mensaje inicial
 });
 
 
